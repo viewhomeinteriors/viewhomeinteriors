@@ -9,7 +9,7 @@ let homeCarousal = document.querySelector(".home-page")
 
 
 
-let images = ["images/living-room-4.jpg", "images/living-room-2.jpg", "images/living-room-3.jpg", "images/living-room-1.jpg", "images/living-room-5.jpg", "images/living-room-6.jpg", "images/living-room-7.jpg", "images/kitchen-1.jpg", "images/kitchen-2.jpg", "images/kitchen-3.jpg", "images/kitchen-4.jpg", "images/kitchen-5.jpg", "images/kitchen-6.jpg", "images/kitchen-7.jpg", "images/bedroom-1.jpg",
+let images = ["images/living-room-3.jpg", "images/living-room-1.jpg", "images/living-room-2.jpg", "images/living-room-4.jpg", "images/living-room-5.jpg", "images/living-room-6.jpg", "images/living-room-7.jpg", "images/kitchen-1.jpg", "images/kitchen-2.jpg", "images/kitchen-3.jpg", "images/kitchen-4.jpg", "images/kitchen-5.jpg", "images/kitchen-6.jpg", "images/kitchen-7.jpg", "images/bedroom-1.jpg",
     "images/bedroom-2.jpg", "images/bedroom-3.jpg",
 ]
 
