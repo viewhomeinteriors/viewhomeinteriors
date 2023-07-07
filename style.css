@@ -32,14 +32,15 @@ html , body{
     left: 85%;
     padding: 24px;
     /* background: #ef4d4a; */
-    background: #0D3A33;
+    /* background: #0D3A33; */
+    background: #FBDDD5;
     z-index: 999;
     bottom: 80%;
-    color: #fff;
+    /* color: #fff; */
 }
 
 .about-us-info p {
-    color: #fff;
+    /* color: #fff; */
     font-size: 1em;
     line-height: 24px;
     text-align: left;
@@ -83,7 +84,8 @@ html , body{
 .clients-div {
     padding: 48px 24px;
     /* background-color: #ef4d4a; */
-    background-color: #0D3A33;
+    /* background-color: #0D3A33; */
+    background-color: #FBDDD5;
 }
 
 .capitalise {
@@ -97,7 +99,8 @@ html , body{
 .client-info {
     padding: 24px;
     /* background: #f77e7b; */
-    background: #FBDDD5;
+    /* background: #FBDDD5; */
+    background: #f8f1ef;
     width: 44%;
     margin: 0 32px;
 }
@@ -108,10 +111,12 @@ html , body{
 
 .contact-grid {
     padding: 1em 1em;
-    background: #333;
+    /* background: #333; */
+    background: #FBDDD5;
     float: left;
     margin: 1% 1%;
-    color: #fff;
+    /* color: #fff; */
+    font-weight: 500;
 }
 
 .email-div {
@@ -123,6 +128,10 @@ html , body{
 
 .opacity-7{
     filter: brightness(50%);
+}
+
+.contact-grid .no-text{
+    color: black !important;
 }
 
 .no-text{
