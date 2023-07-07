@@ -32,14 +32,15 @@ html , body{
     left: 85%;
     padding: 24px;
     /* background: #ef4d4a; */
-    /* background: #0D3A33; */
-    background: #FBDDD5;
+    background: #0D3A33;
+    /* background: #FBDDD5; */
     z-index: 999;
     bottom: 80%;
     /* color: #fff; */
 }
 
 .about-us-info p {
+    color: #FBDDD5;
     /* color: #fff; */
     font-size: 1em;
     line-height: 24px;
