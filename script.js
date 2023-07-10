@@ -7,8 +7,6 @@ let aboutCarousal = document.querySelector(".about-c")
 let homeCarousal = document.querySelector(".home-page")
 
 
-
-
 let images = ["images/living-room-3.jpg", "images/living-room-1.jpg", "images/living-room-2.jpg", "images/living-room-4.jpg", "images/living-room-5.jpg", "images/living-room-6.jpg", "images/living-room-7.jpg", "images/kitchen-1.jpg", "images/kitchen-2.jpg", "images/kitchen-3.jpg", "images/kitchen-4.jpg", "images/kitchen-5.jpg", "images/kitchen-6.jpg", "images/kitchen-7.jpg", "images/bedroom-1.jpg",
     "images/bedroom-2.jpg", "images/bedroom-3.jpg",
 ]
@@ -18,7 +16,7 @@ let images = ["images/living-room-3.jpg", "images/living-room-1.jpg", "images/li
 let year = new Date().getFullYear()
 
 
-images.map((img,index) => {
+images.map((img, index) => {
     var div = document.createElement("div");
     div.className = "col px-0";
 
@@ -32,7 +30,7 @@ images.map((img,index) => {
 
     var servicesCDiv = document.createElement('div');
     servicesCDiv.classList.add('carousel-item');
-    if(index==0){
+    if (index == 0) {
         servicesCDiv.classList.add('active');
     }
 
@@ -47,7 +45,7 @@ images.map((img,index) => {
 
     var aboutCDiv = document.createElement('div');
     aboutCDiv.classList.add('carousel-item');
-    if(index==0){
+    if (index == 0) {
         aboutCDiv.classList.add('active');
     }
 
@@ -62,13 +60,13 @@ images.map((img,index) => {
 
     var homeCDiv = document.createElement('div');
     homeCDiv.classList.add('carousel-item');
-    if(index==0){
+    if (index == 0) {
         homeCDiv.classList.add('active');
     }
 
     let image3 = document.createElement('img');
     image3.src = img;
-    image3.classList.add('d-block', 'w-100', 'c-height','opacity-7');
+    image3.classList.add('d-block', 'w-100', 'c-height', 'opacity-7');
     image3.setAttribute('alt', '...');
 
     let tempdiv = document.createElement('div')
@@ -77,7 +75,7 @@ images.map((img,index) => {
     h1.innerText = "View Home"
     h1.className = "title"
 
-    let span =  document.createElement("span")
+    let span = document.createElement("span")
     span.textContent = " Interiors"
 
     h1.appendChild(span)
@@ -88,3 +86,45 @@ images.map((img,index) => {
 })
 
 document.querySelector(".copyright").innerHTML = `© ${year} View Home Interiors. All Rights Reserved`
+
+
+function openForm() {
+    document.getElementById("message-div").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("message-div").style.display = "none";
+}
+
+
+function addEffect(x){
+    x.classList.add("fa-bounce")
+}
+
+function removeEffect(x){
+    x.classList.remove("fa-bounce")
+}
+
+function sendEmail(event){
+    let form = document.getElementById("message-form")
+
+    let name = form["name"]
+    let email = form["email"]
+    let message = form["message"]
+
+    
+    Email.send({
+        SecureToken : "168fd3ac-f404-4f7d-862d-0987210cae8e",
+        To : 'bhanu.vangati@gmail.com',
+        // To : 'navyam4.797@gmail.com',
+        From : "bhanup.ln143@gmail.com",
+        Subject : "This is the subject",
+        Body : `Hi ${name} with email ${email} has sent you a message ${message} from the website`
+    }).then(
+      message => {
+        console.log(message)
+      }
+    );
+
+    event.preventDefault()
+}
