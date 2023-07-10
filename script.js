@@ -114,12 +114,12 @@ function sendEmail(event){
 
     
     Email.send({
-        SecureToken : "168fd3ac-f404-4f7d-862d-0987210cae8e",
+        SecureToken : "59428e25-58d2-4b9b-9480-26fd7069163d",
         To : 'bhanu.vangati@gmail.com',
         // To : 'navyam4.797@gmail.com',
         From : "bhanup.ln143@gmail.com",
         Subject : "This is the subject",
-        Body : `Hi ${name} with email ${email} has sent you a message ${message} from the website`
+        Body : `Hi`
     }).then(
       message => {
         console.log(message)
