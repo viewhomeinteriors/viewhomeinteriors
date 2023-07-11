@@ -35,7 +35,7 @@ body {
     /* background: #ef4d4a; */
     background: #0D3A33;
     /* background: #FBDDD5; */
-    z-index: 999;
+    /* z-index: 999; */
     bottom: 80%;
     /* color: #fff; */
 }
@@ -86,8 +86,8 @@ body {
 .clients-div {
     padding: 48px 24px;
     /* background-color: #ef4d4a; */
-    /* background-color: #0D3A33; */
-    background-color: #FBDDD5;
+    background-color: #0D3A33;
+    /* background-color: #FBDDD5; */
 }
 
 .capitalise {
@@ -102,9 +102,10 @@ body {
     padding: 24px;
     /* background: #f77e7b; */
     /* background: #FBDDD5; */
-    background: #f8f1ef;
+    /* background: #f8f1ef; */
+    background-color: #eaf8f7;
     width: 44%;
-    margin: 0 32px;
+    margin: 24px 32px;
 }
 
 .contact-div {
@@ -114,7 +115,8 @@ body {
 .contact-grid {
     padding: 1em 1em;
     /* background: #333; */
-    background: #FBDDD5;
+    /* background: #FBDDD5; */
+    background: #0D3A33;
     float: left;
     margin: 1% 1%;
     /* color: #fff; */
@@ -128,8 +130,9 @@ body {
     position: fixed;
     bottom: 0;
     right: 15px;
-    z-index: 9;
+    z-index: 999;
     border-radius: 10px;
+    display: none;
 }
 
 .btn-close{
@@ -150,8 +153,12 @@ body {
     filter: brightness(50%);
 }
 
+.contact-grid{
+    color: #FBDDD5;
+}
+
 .contact-grid .no-text {
-    color: black !important;
+    color: #FBDDD5 !important;
 }
 
 .no-text {
@@ -328,6 +335,7 @@ body {
 
     .client-info {
         width: 100%;
+        padding: 18px;
     }
 
     .c-height {

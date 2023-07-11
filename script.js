@@ -112,19 +112,35 @@ function sendEmail(event){
     let email = form["email"]
     let message = form["message"]
 
-    
+
+
     Email.send({
-        SecureToken : "59428e25-58d2-4b9b-9480-26fd7069163d",
+        Host : "smtp.elasticemail.com",
+        Username : "bhanup.ln143@gmail.com",
+        Password : "3A8D9905F2A4ACD0244A96A4989B68CFA77D",
         To : 'bhanu.vangati@gmail.com',
-        // To : 'navyam4.797@gmail.com',
         From : "bhanup.ln143@gmail.com",
         Subject : "This is the subject",
-        Body : `Hi`
+        Body : "And this is the body"
     }).then(
       message => {
         console.log(message)
       }
     );
+
+    
+    // Email.send({
+    //     SecureToken : "f572bc99-cdf0-496c-96d8-82972ce59de2",
+    //     To : 'bhanu.vangati@gmail.com',
+    //     // To : 'navyam4.797@gmail.com',
+    //     From : "bhanup.ln143@gmail.com",
+    //     Subject : "This is the subject",
+    //     Body : `Hi`
+    // }).then(
+    //   message => {
+    //     console.log(message)
+    //   }
+    // );
 
     event.preventDefault()
 }
