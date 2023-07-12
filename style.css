@@ -187,8 +187,9 @@ body {
 }
 
 .title span {
-    color: #ef4d4a;
+    /* color: #ef4d4a; */
     /* color: #0D3A33; */
+    color: #FFF;
     font-family: 'Playfair Display', serif;
     /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
 }
