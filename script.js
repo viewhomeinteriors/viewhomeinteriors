@@ -106,6 +106,7 @@ function removeEffect(x) {
 }
 
 async function sendEmail(event) {
+    event.preventDefault()
     let form = document.getElementById("message-form")
 
     let name = form["name"].value || ""
@@ -118,7 +119,8 @@ async function sendEmail(event) {
 
     console.log(body)
     const response = await fetch("https://b31c-49-204-14-185.ngrok-free.app/send", {
-        method: "POST",
+        method: 'POST',
+        mode: 'no-cors',
         headers: {
             "Content-Type": "application/json",
         },
@@ -126,5 +128,5 @@ async function sendEmail(event) {
     });
 
     console.log(await response.json());
-    event.preventDefault()
+    
 }
