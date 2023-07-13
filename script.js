@@ -97,50 +97,34 @@ function closeForm() {
 }
 
 
-function addEffect(x){
+function addEffect(x) {
     x.classList.add("fa-bounce")
 }
 
-function removeEffect(x){
+function removeEffect(x) {
     x.classList.remove("fa-bounce")
 }
 
-function sendEmail(event){
+async function sendEmail(event) {
     let form = document.getElementById("message-form")
 
-    let name = form["name"]
-    let email = form["email"]
-    let message = form["message"]
+    let name = form["name"].value || ""
+    let email = form["email"].value  || ""
+    let message = form["message"].value  || ""
 
+    let body = {
+        name,email,message
+    }
 
+    console.log(body)
+    const response = await fetch("https://b31c-49-204-14-185.ngrok-free.app/send", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body
+    });
 
-    Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "bhanup.ln143@gmail.com",
-        Password : "3A8D9905F2A4ACD0244A96A4989B68CFA77D",
-        To : 'bhanu.vangati@gmail.com',
-        From : "bhanup.ln143@gmail.com",
-        Subject : "This is the subject",
-        Body : "And this is the body"
-    }).then(
-      message => {
-        console.log(message)
-      }
-    );
-
-    
-    // Email.send({
-    //     SecureToken : "f572bc99-cdf0-496c-96d8-82972ce59de2",
-    //     To : 'bhanu.vangati@gmail.com',
-    //     // To : 'navyam4.797@gmail.com',
-    //     From : "bhanup.ln143@gmail.com",
-    //     Subject : "This is the subject",
-    //     Body : `Hi`
-    // }).then(
-    //   message => {
-    //     console.log(message)
-    //   }
-    // );
-
+    console.log(await response.json());
     event.preventDefault()
 }
