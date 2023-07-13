@@ -120,7 +120,7 @@ async function sendEmail(event) {
     console.log(body)
     const response = await fetch("https://b31c-49-204-14-185.ngrok-free.app/send", {
         method: 'POST',
-        mode: 'no-cors',
+        // mode: 'no-cors',
         headers: {
             "Content-Type": "application/json",
         },
