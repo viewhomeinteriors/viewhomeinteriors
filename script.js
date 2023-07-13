@@ -107,6 +107,8 @@ function removeEffect(x) {
 
 async function sendEmail(event) {
     event.preventDefault()
+    const toastLiveExample = document.getElementById('liveToast')
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
     let form = document.getElementById("message-form")
 
     let name = form["name"].value || ""
@@ -126,6 +128,12 @@ async function sendEmail(event) {
         body:JSON.stringify(temp)
     });
 
-    console.log(await response.json());
-    
+    toastBootstrap.show()
+
+    let msg = await response.json()
+
+    if(msg.message.toLowerCase()=="email sent"){
+        closeForm();
+        toastBootstrap.show()    
+    }
 }
