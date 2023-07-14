@@ -11,23 +11,94 @@ let images = ["images/living-room-3.jpg", "images/living-room-1.jpg", "images/li
     "images/bedroom-2.jpg", "images/bedroom-3.jpg",
 ]
 
+let arrayOfImages = [{
+        name: "images/living-room-3.jpg",
+        type: "living"
+    },
+    {
+        name: "images/living-room-1.jpg",
+        type: "living"
+    },
+    {
+        name: "images/living-room-2.jpg",
+        type: "living"
+    },
+    {
+        name: "images/living-room-4.jpg",
+        type: "living"
+    },
+    {
+        name: "images/living-room-5.jpg",
+        type: "living"
+    },
+    {
+        name: "images/living-room-6.jpg",
+        type: "living"
+    },
+    {
+        name: "images/living-room-7.jpg",
+        type: "living"
+    },
+    {
+        name: "images/kitchen-1.jpg",
+        type: "kitchen"
+    },
+    {
+        name: "images/kitchen-2.jpg",
+        type: "kitchen"
+    },
+    {
+        name: "images/kitchen-3.jpg",
+        type: "kitchen"
+    },
+    {
+        name: "images/kitchen-4.jpg",
+        type: "kitchen"
+    },
+    {
+        name: "images/kitchen-5.jpg",
+        type: "kitchen"
+    },
+    {
+        name: "images/kitchen-6.jpg",
+        type: "kitchen"
+    },
+    {
+        name: "images/kitchen-7.jpg",
+        type: "kitchen"
+    },
+    {
+        name: "images/bedroom-1.jpg",
+        type: "bedroom"
+    },
+    {
+        name: "images/bedroom-2.jpg",
+        type: "bedroom"
+    },
+    {
+        name: "images/bedroom-3.jpg",
+        type: "bedroom"
+    }
+]
+
 
 
 let year = new Date().getFullYear()
 
 
-images.map((img, index) => {
+arrayOfImages.map(img => {
     var div = document.createElement("div");
     div.className = "col px-0";
 
     var image = document.createElement("img");
     image.className = "p-images";
-    image.src = img;
+    image.src = img.name;
     div.appendChild(image);
     imgsDiv.appendChild(div);
+})
 
 
-
+images.map((img, index) => {
     var servicesCDiv = document.createElement('div');
     servicesCDiv.classList.add('carousel-item');
     if (index == 0) {
@@ -141,5 +212,50 @@ async function sendEmail(event) {
         }
     }
 
+}
+
+function filterImages(type) {
+
+    let types = ["all", "living", "kitchen", "bedroom"]
+
+
+    document.getElementById(type.toLowerCase()).classList.add("active-filter")
+    document.getElementById(type.toLowerCase()).classList.remove("inactive")
+
+    types
+        .filter(ty => type != ty)
+        .map(ty => {
+            document.getElementById(ty).classList.remove("active-filter")
+            document.getElementById(ty).classList.add("inactive")
+        })
+
+    while (imgsDiv.firstChild) {
+        imgsDiv.removeChild(imgsDiv.firstChild);
+    }
+    if (type.toLowerCase() === "all") {
+        arrayOfImages.map(img => {
+            var div = document.createElement("div");
+            div.className = "col px-0";
+
+            var image = document.createElement("img");
+            image.className = "p-images";
+            image.src = img.name;
+            div.appendChild(image);
+            imgsDiv.appendChild(div);
+        })
+    } else {
+        arrayOfImages
+            .filter(img => img.type === type)
+            .map(img => {
+                var div = document.createElement("div");
+                div.className = "col px-0";
+
+                var image = document.createElement("img");
+                image.className = "p-images";
+                image.src = img.name;
+                div.appendChild(image);
+                imgsDiv.appendChild(div);
+            })
+    }
 
 }

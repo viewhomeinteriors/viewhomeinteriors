@@ -187,13 +187,13 @@
             <h1 class="mb-4">PORTFOLIO</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a>All</a></li>
-                    <li class="breadcrumb-item"><a>living room</a></li>
-                    <li class="breadcrumb-item"><a>kitchen</a></li>
-                    <li class="breadcrumb-item"><a>bedroom</a></li>
+                    <li class="breadcrumb-item active-filter" onclick="filterImages('all')" id="all"><a >All</a></li>
+                    <li class="breadcrumb-item inactive" onclick="filterImages('living')" id="living"><a >living room</a></li>
+                    <li class="breadcrumb-item inactive" onclick="filterImages('kitchen')" id="kitchen"><a >kitchen</a></li>
+                    <li class="breadcrumb-item inactive" onclick="filterImages('bedroom')" id="bedroom"><a >bedroom</a></li>
                 </ol>
             </nav>
-        </div>
+        </div> 
         <div>
             <div class="p-4 text-center">
                 <div id="portfolio-imgs" class="row row-cols-2 row-cols-md-3 row-cols-sm-2">

@@ -123,6 +123,25 @@ body {
     font-weight: 500;
 }
 
+.breadcrumb {
+    cursor: pointer;
+}
+
+.breadcrumb-item:hover {
+    opacity: 1 !important;
+}
+
+.active-filter {
+    opacity: 1;
+    font-weight: bolder;
+}
+
+.inactive {
+    opacity: 0.5;
+    font-weight: 400;
+}
+
+
 .email-div {
     background: #f7f7f7;
     padding: 1.5em 2em;
@@ -135,7 +154,7 @@ body {
     display: none;
 }
 
-.btn-close{
+.btn-close {
     float: right;
 }
 
@@ -157,7 +176,7 @@ body {
     filter: brightness(50%);
 }
 
-.contact-grid{
+.contact-grid {
     color: #FBDDD5;
 }
 
@@ -198,7 +217,7 @@ body {
     /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; */
 }
 
-#msg-response{
+#msg-response {
     display: none;
 }
 
