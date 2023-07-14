@@ -111,29 +111,35 @@ async function sendEmail(event) {
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
     let form = document.getElementById("message-form")
 
-    let name = form["name"].value || ""
-    let email = form["email"].value  || ""
-    let message = form["message"].value  || ""
+    if (form.checkValidity()) {
+        let name = form["name"].value || ""
+        let email = form["email"].value || ""
+        let message = form["message"].value || ""
 
-    let temp = {
-        name,email,message
+        let temp = {
+            name,
+            email,
+            message
+        }
+
+        const response = await fetch("https://b31c-49-204-14-185.ngrok-free.app/send", {
+            method: 'POST',
+            // mode: 'no-cors',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(temp)
+        });
+
+        toastBootstrap.show()
+
+        let msg = await response.json()
+
+        if (msg.message.toLowerCase() == "email sent") {
+            closeForm();
+            toastBootstrap.show()
+        }
     }
 
-    const response = await fetch("https://b31c-49-204-14-185.ngrok-free.app/send", {
-        method: 'POST',
-        // mode: 'no-cors',
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body:JSON.stringify(temp)
-    });
 
-    toastBootstrap.show()
-
-    let msg = await response.json()
-
-    if(msg.message.toLowerCase()=="email sent"){
-        closeForm();
-        toastBootstrap.show()    
-    }
 }

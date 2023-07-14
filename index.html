@@ -56,26 +56,29 @@
         </div>
     </nav>
 
-    <i onclick="openForm()" onmouseover="addEffect(this)" onmouseout="removeEffect(this)"
-        class="fa-brands fa-facebook-messenger open-button"></i>
+    <!-- <i onclick="openForm()" onmouseover="addEffect(this)" onmouseout="removeEffect(this)"
+        class="fa-brands fa-facebook-messenger open-button"></i> -->
+        <div onclick="openForm()" class="open-button">
+            <i class="fa-regular fa-message"></i> Contact Us
+        </div>
     <div class="email-div" id="message-div">
         <button onclick="closeForm()" type="button" class="btn-close" aria-label="Close"></button>
-        <form id="message-form">
+        <form id="message-form" onsubmit="sendEmail(event)">
             <h4 class="pb-4">Send us a message now</h4>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Your Name</label>
-                <input class="form-control" name="name" type="text">
+                <input class="form-control" name="name" type="text" required>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Your Email</label>
                 <input type="email" class="form-control" name="email" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
+                    aria-describedby="emailHelp" required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
-                <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3" required></textarea>
             </div>
-            <button type="submit" onclick="sendEmail(event)" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
