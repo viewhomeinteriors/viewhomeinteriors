@@ -143,7 +143,7 @@ images.map((img, index) => {
     let tempdiv = document.createElement('div')
     tempdiv.className = "carousel-caption"
     let h1 = document.createElement("h1")
-    h1.innerText = "View Home"
+    h1.innerText = "ViewHome"
     h1.className = "title"
 
     let span = document.createElement("span")
