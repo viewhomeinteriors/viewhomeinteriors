@@ -56,11 +56,93 @@
         </div>
     </nav>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Send us a message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="message-form" onsubmit="sendEmail(event)">
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Your Name</label>
+                            <input class="form-control" name="name" type="text" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea2" class="form-label">Your Phone</label>
+                            <input type="text" class="form-control" name="phone" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid phone number.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" name="email" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid email.
+                            </div>
+                        </div>
+                       <div class="mb-3">
+                            <label for="validationCustom03" class="form-label">City</label>
+                            <input type="text" class="form-control" name="city" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationCustom04" class="form-label">Type of Service</label>
+                            <select class="form-select" id="validationCustom04" name="service" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option>Architecture</option>
+                                <option>Interior</option>
+                                <option>Architecture + Interior</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid service.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="validationCustom05" class="form-label">Current site condition</label>
+                            <select class="form-select" id="validationCustom05" name="condition" required>
+                                <option selected disabled value="">Choose...</option>
+                                <option>Empty Plot</option>
+                                <option>Bare Shell</option>
+                                <option>Civil Structure</option>
+                                <option>Builders Apartment</option>
+                                <option>Gated Community</option>
+                                <option>Renovation</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid condition.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Area of Site</label>
+                            <input type="text" class="form-control" name="area" id="area" required
+                                placeholder="in sft/meter/yard/acre">
+                            <div class="invalid-feedback">
+                                Please select a valid area.
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- <i onclick="openForm()" onmouseover="addEffect(this)" onmouseout="removeEffect(this)"
         class="fa-brands fa-facebook-messenger open-button"></i> -->
-        <div onclick="openForm()" class="open-button">
-            <i class="fa-regular fa-message"></i> Contact Us
-        </div>
+    <div data-bs-toggle="modal" data-bs-target="#exampleModal" class="open-button">
+        <i class="fa-regular fa-message"></i> Contact Us
+    </div>
     <div class="email-div" id="message-div">
         <button onclick="closeForm()" type="button" class="btn-close" aria-label="Close"></button>
         <form id="message-form" onsubmit="sendEmail(event)">
@@ -76,22 +158,23 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
-                <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                <textarea class="form-control" name="message" id="exampleFormControlTextarea1" rows="3"
+                    required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header">
-            <div class="me-auto"></div>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body">
-            Message sent successfully. Our team will get in touch with you.
-          </div>
+            <div class="toast-header">
+                <div class="me-auto"></div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Message sent successfully. Our team will get in touch with you.
+            </div>
         </div>
-      </div>
+    </div>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
@@ -187,13 +270,16 @@
             <h1 class="mb-4">PORTFOLIO</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active-filter" onclick="filterImages('all')" id="all"><a >All</a></li>
-                    <li class="breadcrumb-item inactive" onclick="filterImages('living')" id="living"><a >living room</a></li>
-                    <li class="breadcrumb-item inactive" onclick="filterImages('kitchen')" id="kitchen"><a >kitchen</a></li>
-                    <li class="breadcrumb-item inactive" onclick="filterImages('bedroom')" id="bedroom"><a >bedroom</a></li>
+                    <li class="breadcrumb-item active-filter" onclick="filterImages('all')" id="all"><a>All</a></li>
+                    <li class="breadcrumb-item inactive" onclick="filterImages('living')" id="living"><a>living room</a>
+                    </li>
+                    <li class="breadcrumb-item inactive" onclick="filterImages('kitchen')" id="kitchen"><a>kitchen</a>
+                    </li>
+                    <li class="breadcrumb-item inactive" onclick="filterImages('bedroom')" id="bedroom"><a>bedroom</a>
+                    </li>
                 </ol>
             </nav>
-        </div> 
+        </div>
         <div>
             <div class="p-4 text-center">
                 <div id="portfolio-imgs" class="row row-cols-2 row-cols-md-3 row-cols-sm-2">

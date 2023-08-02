@@ -185,17 +185,32 @@ async function sendEmail(event) {
     if (form.checkValidity()) {
         let name = form["name"].value || ""
         let email = form["email"].value || ""
-        let message = form["message"].value || ""
+        let phone = form["phone"].value || ""
+        let city = form["city"].value || ""
+        let service = form["service"].value || ""
+        let condition = form["condition"].value || ""
+        let area = form["area"].value || ""
+
 
         let temp = {
             name,
             email,
-            message
+            phone,
+            city,
+            service,
+            condition,
+            area
         }
 
-        const response = await fetch("https://b31c-49-204-14-185.ngrok-free.app/send", {
+        console.log("data",temp)
+
+        // let backendUrl = "https://b31c-49-204-14-185.ngrok-free.app/send" 
+        let backendUrl = "" 
+
+        // This is the API url to send email. Use nodemailer node package for backend and deploy the api in heroku or any other free backend hosting service and replace the url endpoint here
+
+        const response = await fetch(backendUrl, {
             method: 'POST',
-            // mode: 'no-cors',
             headers: {
                 "Content-Type": "application/json",
             },
